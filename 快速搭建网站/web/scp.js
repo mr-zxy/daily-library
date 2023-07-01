@@ -17,7 +17,7 @@ server = {
   host: '149.28.23.136', // 服务器的IP地址
   port: '', // 服务器端口
   username: 'root', // 用户名
-  password: 'h5E+DGEzAi2B7LpN', // 密码
+  password: '', // 密码
   path: PATH, // 项目部署的服务器目标位置
   command: `rm -rf ${PATH}` // 删除命令
 }
