@@ -1,6 +1,6 @@
-# 快速搭建网站 WEB 篇
+# 快速搭建网站-WEB篇
 
-使用技术 VitePress
+> 使用技术 VitePress
 
 [vitepress 快速开始](https://vitepress.dev/guide/getting-started)
 
