@@ -143,9 +143,7 @@ Access-Control-Request-Method: <method>
 
 
 1.参考链接
-
-​	https://baike.baidu.com/item/CORS/16411212?fr=ge_ala
-
+    https://baike.baidu.com/item/CORS/16411212?fr=ge_ala
 ​    https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials
 
 ​	

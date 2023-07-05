@@ -12,7 +12,8 @@
 ---
 > 现在思考一下，在哪一步跨域呢？如果跨域了，接口还会调用吗？
 
-![image-20230703211017091](./assets/image-20230703211017091.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/5cb9574a5a3d4821921c74df8cbce380.png#pic_center)
+
 
 <center>跨域的报错</center>
 
@@ -28,13 +29,14 @@ Access-Control-Allow-Origin 响应标头指定了该响应的资源是否被允�
 http://127.0.0.1:2010   只允许这个地址访问。
 ```
 
-​    ![image-20230703211649930](./assets/image-20230703211649930.png)![image-20230703211757881](./assets/image-20230703211757881.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/64e1f5d4858a4bd2a658298b16bb0d7b.png#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/a68111a6ba3f4701b4826ceda464b26d.png#pic_center)
 
-![image-20230703211830490](./assets/image-20230703211830490.png)
 
 ### 同时发起了POST GET 请求，显而易见POST还是报错cors，还是报错跨域。而GET却成功了，这是为什么呢？
 
-<img src="./assets/image-20230703212115651.png" alt="image-20230703212115651" style="zoom: 67%;" /><img src="./assets/image-20230703212143312.png" alt="image-20230703212143312" style="zoom: 25%;" />
+![在这里插入图片描述](https://img-blog.csdnimg.cn/a06abdede0434f5c9414958532eea298.png#pic_center)
+
 
 ### 更改下代码，在服务端添加一个header Access-Control-Allow-Headers：Content-Type，因为POST会自动添加请求头Content-Type而GET是不会自己添加的。
 
@@ -48,11 +50,10 @@ Access-Control-Allow-Headers: *
 
 ### 接下来展开说一下什么是（预检请求）
 
-![image-20230703213123762](./assets/image-20230703213123762.png)
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/5027e179cbd14ae0b8952a0b8242907b.png#pic_center)
 ### 第一发送POST请求会先发送一个预请求OPTIONS，如果不存在跨域，则可以访问，存在跨域，则不发送POST请求。现在可以解答了，上面的问题，“如果跨域了，服务端可以收到请求，则不会执行代码”。也不都是所有请求方式都需要发送预请求。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/28270ce238384453b8d639278363e18d.png#pic_center)
 
-<img src="./assets/image-20230703213806257.png" alt="image-20230703213806257" style="zoom:33%;" />
 
 ### 简单的说：我们发送一个最简单的GET请求，就不会发送预请求。
 
@@ -61,8 +62,8 @@ Access-Control-Allow-Headers: *
 ```
 Access-Control-Max-Age: 600 将预检请求的结果缓存 10 分钟：
 ```
+![在这里插入图片描述](https://img-blog.csdnimg.cn/369cf4e9de404683a615a58c38618ef4.png#pic_center)
 
-![image-20230703214048495](./assets/image-20230703214048495.png)
 
 ## Access-Control-Allow-Methods
 
@@ -72,10 +73,8 @@ Access-Control-Max-Age: 600 将预检请求的结果缓存 10 分钟：
 Access-Control-Allow-Methods: <method>, <method>, ...
 ```
 
-![image-20230703215132837](./assets/image-20230703215132837.png)
-
-![image-20230703215215009](./assets/image-20230703215215009.png)
-
+![在这里插入图片描述](https://img-blog.csdnimg.cn/e8cb7c1e78474b8b805bc7f795407b5c.png#pic_center)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/74529f5aa562462bae48f3a60007f403.png#pic_center)
 ### Access-Control-Allow-Methods 设置了Options预加载，但是POST，GET可以请求通，PUT，DELETE请求不通了。原因Access-Control-Allow-Methods默认配置POST，GET。
 
 ## Access-Control-Expose-Headers
@@ -86,10 +85,9 @@ Access-Control-Allow-Methods: <method>, <method>, ...
 Access-Control-Expose-Headers: [<header-name>[, <header-name>]*]
 Access-Control-Expose-Headers: *
 ```
+![在这里插入图片描述](https://img-blog.csdnimg.cn/d2495cd7855a451b97f41d3be4f41623.png#pic_center)
 
-![image-20230703215705870](./assets/image-20230703215705870.png)
-
-![image-20230703215733800](./assets/image-20230703215733800.png)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/f4bdb792c8aa49a09c91711847a5046e.png#pic_center)
 
 ### 设置了Access-Control-Expose-Headers：content-length。前端只可以获取请求头content-length。
 
@@ -118,8 +116,8 @@ Access-Control-Allow-Credentials: true
 > 以下注意的点
 >
 > c.Header("Access-Control-Allow-Origin", "http://127.0.0.1:201") 要填写全路径，不能填写*。
+![在这里插入图片描述](https://img-blog.csdnimg.cn/4c7762acfcf94827ada4dc3c92f8fad0.png#pic_center)
 
-![image-20230703220625350](./assets/image-20230703220625350.png)
 
 # Access-Control-Request-Headers
 
@@ -139,7 +137,8 @@ Access-Control-Request-Method: <method>
 
 ## 最终跨域请求头配置
 
-<img src="./assets/image-20230703222008427.png" alt="image-20230703222008427" style="zoom:50%;" />
+![在这里插入图片描述](https://img-blog.csdnimg.cn/c7ef300c737247daabbc860890319d83.png#pic_center)
+
 
 ## 解决跨域的多种办法
 1. 开发环境 Proxy 代理，原理利用服务器请求，在返回前端。
