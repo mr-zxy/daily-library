@@ -3,7 +3,7 @@
 ## 视频播放网站-售卖-价格可谈，电影视频网站。
 
 1. 每周一分享 web，go随机一库。
-2. 节点 <a href="https://wcdha.com">一键跳转</a>
+2. Clash节点（你懂的） <a href="https://raw.githubusercontent.com/mr-zxy/daily-library/main/claxx.yaml">一键跳转</a>
 3. 我的网站 <a href="https://wcdha.com">一键跳转</a>
 4. 我的B站 <a href="https://space.bilibili.com/432329331">一键跳转</a>
 5. 我的公众号 “多啦A梦的小电视”
