@@ -55,4 +55,4 @@ acme.sh --issue -d domain.com --dns dns_ali --standalone -k ec-256
 2. acme.sh --installcert -d domain.com --ecc  --key-file  /cer/server.key   --fullchain-file /cer/server.crt
 
 > 更新证书
-1. acme.sh --renew -d do man.com --dns dns_ali --standalone -k ec-256 --force
+1. acme.sh --renew -d doman.com --dns dns_ali --standalone -k ec-256 --force
