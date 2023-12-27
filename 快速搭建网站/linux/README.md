@@ -56,3 +56,4 @@ acme.sh --issue -d domain.com --dns dns_ali --standalone -k ec-256
 
 > 更新证书
 1. acme.sh --renew -d doman.com --dns dns_ali --standalone -k ec-256 --force
+2. acme.sh --installcert -d doman.com --ecc  --key-file  /home/nginx/ssl/gpt-server.key   --fullchain-file /home/nginx/ssl/gpt-server.crt
